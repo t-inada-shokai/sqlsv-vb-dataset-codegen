@@ -29,17 +29,22 @@ SQL Serverのテーブル・テーブル型・ストアドプロシジャの定�
 │   ├── Src00_01CreateDB/
 │   │   └── 001CreateDB.sql                  … サンプル用DB作成スクリプト
 │   ├── Src01_01CreateTable/                 … サンプルテーブル・テーブル型
-│   │   ├── SaveTable.bat
 │   │   ├── tbl_D_SAMPLE_DATA.sql
 │   │   ├── typ_TYPE_D_SAMPLE_DATA.sql
 │   │   └── *_list.txt                       … 対象オブジェクト一覧(バックアップ用途)
-│   ├── Src01_00_15VB_xsd作成用/             … ★DataSet(XSD)生成一式
+│   ├── Src01_02storedprocedure/             … ★生成用ストアドプロシジャ本体
+│   │   ├── adm_S_VBテーブル情報一覧作成.sql … ★DataSet(XSD)生成の元になるストアド定義
+│   │   ├── adm_S_VBストアドプロシジャ定義SQL作成.sql … ★呼び出しクラス生成の元になるストアド定義
+│   │   ├── adm_S_RTrimCRLF.sql              … 補助関数(文末CRLF/空白除去)
+│   │   ├── TEST_STOREDPROCEDURE.sql         … サンプルアプリ動作確認用のテストストアド
+│   │   └── fn_list.txt / sp_list.txt        … 対象オブジェクト一覧(バックアップ用途)
+│   ├── Src01_00_15VB_xsd作成用/             … ★DataSet(XSD)生成の実行一式
 │   │   ├── SaveTableInfo.bat                … 実行バッチ
 │   │   ├── ConvertXMLtoXSD_STDINOUT.exe     … 中間XML→XSD変換
 │   │   ├── ReshapeXSD_STDINOUT.exe          … XSD属性の並び順整形
 │   │   ├── DSSQLSV.xml / .xml.temp / .xsd   … 生成物のサンプル
 │   │   └── ReadMe.txt
-│   └── Src01_00_17VB_StoredClass作成用/     … ★呼び出しクラス生成一式
+│   └── Src01_00_17VB_StoredClass作成用/     … ★呼び出しクラス生成の実行一式
 │       ├── SaveClass.bat                    … 実行バッチ
 │       └── AppCommonsClass_DBAccess_Stored.vb … 生成物のサンプル
 └── VBSolution/                               … VB.NET側の資産(Visual Studioソリューション)
@@ -50,7 +55,7 @@ SQL Serverのテーブル・テーブル型・ストアドプロシジャの定�
     └── Project_SampleApp/                    … 生成物を実際に使うサンプルアプリ
 ```
 
-> **Note:** ストアドプロシジャ定義SQL作成・テーブル定義SQL作成・ビュー/トリガー/ファンクション定義SQL作成など、DBオブジェクトのDDLをバックアップ的にファイル化する管理用ストアド群は、本リポジトリのスコープ外のため含めていません。
+> **Note:** `Src01_02storedprocedure/`には、本リポジトリの動作に必要な最小限のストアド／関数のみを収録しています。DBオブジェクトのDDLをバックアップ的にファイル化する管理用ストアド群(テーブル定義SQL作成・ビュー/トリガー/ファンクション定義SQL作成など)は、本リポジトリのスコープ外のため含めていません。
 
 ## 動作環境
 
@@ -70,7 +75,18 @@ SQLSvFiles/Src00_01CreateDB/001CreateDB.sql を実行してDBを作成
 SQLSvFiles/Src01_01CreateTable/ のSQLでサンプルテーブル・テーブル型を作成
 ```
 
-### 2. 接続設定
+### 2. 生成用ストアドプロシジャのインストール
+
+`SQLSvFiles/Src01_02storedprocedure/` 内のSQLを、対象DB上で実行してください。
+
+```
+adm_S_RTrimCRLF.sql                         … 補助関数
+adm_S_VBテーブル情報一覧作成.sql            … DataSet(XSD)生成ストアド
+adm_S_VBストアドプロシジャ定義SQL作成.sql   … 呼び出しクラス生成ストアド
+TEST_STOREDPROCEDURE.sql                    … サンプルアプリ動作確認用ストアド
+```
+
+### 3. 接続設定
 
 `SQLSvFiles/DBsettingForBatch.ini` を編集し、接続先を設定してください(値はサンプルとして伏字にしてあります)。
 
@@ -81,7 +97,7 @@ DBloginID=<your_login_id>
 DBpassword=<your_password>
 ```
 
-### 3. DataSet(XSD)の生成
+### 4. DataSet(XSD)の生成
 
 ```
 SQLSvFiles/Src01_00_15VB_xsd作成用/SaveTableInfo.bat を実行
@@ -91,7 +107,7 @@ SQLSvFiles/Src01_00_15VB_xsd作成用/SaveTableInfo.bat を実行
 → DSSQLSV.Designer.vb が更新される
 ```
 
-### 4. ストアド呼び出しクラスの生成
+### 5. ストアド呼び出しクラスの生成
 
 ```
 SQLSvFiles/Src01_00_17VB_StoredClass作成用/SaveClass.bat を実行
@@ -99,7 +115,7 @@ SQLSvFiles/Src01_00_17VB_StoredClass作成用/SaveClass.bat を実行
 → VB.NETプロジェクトにコピー(上書き)
 ```
 
-### 5. サンプルアプリで動作確認
+### 6. サンプルアプリで動作確認
 
 `VBSolution/Project_SampleApp` に、上記の生成物を実際に使ったサンプル(`TEST_STOREDPROCEDURE`ストアドの呼び出し)が含まれています。
 
