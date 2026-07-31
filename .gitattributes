@@ -1,0 +1,16 @@
+*.vb encoding=utf-8
+*.resx encoding=utf-8
+Application.myapp encoding=utf-8
+*.vbproj.user encoding=utf-8
+*.vbproj encoding=utf-8
+*.sln encoding=utf-8
+App.config encoding=utf-8
+app.manifest encoding=utf-8
+Settings.settings encoding=utf-8
+*.xsc encoding=utf-8
+*.xsd encoding=utf-8
+*.xss encoding=utf-8
+FodyWeavers.xml encoding=utf-8
+FodyWeavers.xsd encoding=utf-8
+.gitignore encoding=utf-8
+README.md text encoding=utf-8

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ShiftJis"?>
+<Tables>
+<Table name="D_SAMPLE_DATA">
+<Column name="uid" type="int64" autoincrement="true" autoincrement_seedvalue="1                             " autoincrement_incrementvalue="1                             " />
+<Column name="original_str" type="string" maxlength="20" allowNull="true" />
+<Column name="castAsBigInt" type="int64" allowNull="true" />
+<Column name="mul_2" type="int64" allowNull="true" />
+<Column name="mul_2_AsStr" type="string" maxlength="20" allowNull="true" />
+<Column name="updatedatetime" type="datetimeoffset" default="(sysdatetimeoffset())" />
+</Table>
+<Table name="TYPE_D_SAMPLE_DATA">
+<Column name="uid" type="int64" allowNull="true" />
+<Column name="original_str" type="string" maxlength="20" allowNull="true" />
+<Column name="castAsBigInt" type="int64" allowNull="true" />
+<Column name="mul_2" type="int64" allowNull="true" />
+<Column name="mul_2_AsStr" type="string" maxlength="20" allowNull="true" />
+<Column name="updatedatetime" type="datetimeoffset" allowNull="true" />
+</Table>
+</Tables>
+<Indexes>
+<Index name="PK__D_SAMPLE__DD70126476A34076" type="PrimaryKey" on="D_SAMPLE_DATA">
+<KeyColumn name="uid" />
+</Index>
+</Indexes>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSSQLSV" targetNamespace="http://tempuri.org/DSSQLSV.xsd" xmlns:mstns="http://tempuri.org/DSSQLSV.xsd" xmlns="http://tempuri.org/DSSQLSV.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSSQLSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSSQLSV" msprop:Generator_UserDSName="DSSQLSV">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="D_SAMPLE_DATA" msprop:Generator_TableClassName="D_SAMPLE_DATADataTable" msprop:Generator_TableVarName="tableD_SAMPLE_DATA" msprop:Generator_TablePropName="D_SAMPLE_DATA" msprop:Generator_RowDeletingName="D_SAMPLE_DATARowDeleting" msprop:Generator_RowChangingName="D_SAMPLE_DATARowChanging" msprop:Generator_RowEvHandlerName="D_SAMPLE_DATARowChangeEventHandler" msprop:Generator_RowDeletedName="D_SAMPLE_DATARowDeleted" msprop:Generator_UserTableName="D_SAMPLE_DATA" msprop:Generator_RowChangedName="D_SAMPLE_DATARowChanged" msprop:Generator_RowEvArgName="D_SAMPLE_DATARowChangeEvent" msprop:Generator_RowClassName="D_SAMPLE_DATARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="uid" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msdata:AutoIncrementStep="1" msprop:Generator_ColumnVarNameInTable="columnuid" msprop:Generator_ColumnPropNameInRow="uid" msprop:Generator_ColumnPropNameInTable="uidColumn" msprop:Generator_UserColumnName="uid" type="xs:long" />
+              <xs:element name="original_str" msprop:Generator_ColumnVarNameInTable="columnoriginal_str" msprop:Generator_ColumnPropNameInRow="original_str" msprop:Generator_ColumnPropNameInTable="original_strColumn" msprop:Generator_UserColumnName="original_str" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="castAsBigInt" msprop:Generator_ColumnVarNameInTable="columncastAsBigInt" msprop:Generator_ColumnPropNameInRow="castAsBigInt" msprop:Generator_ColumnPropNameInTable="castAsBigIntColumn" msprop:Generator_UserColumnName="castAsBigInt" type="xs:long" minOccurs="0" />
+              <xs:element name="mul_2" msprop:Generator_ColumnVarNameInTable="columnmul_2" msprop:Generator_ColumnPropNameInRow="mul_2" msprop:Generator_ColumnPropNameInTable="mul_2Column" msprop:Generator_UserColumnName="mul_2" type="xs:long" minOccurs="0" />
+              <xs:element name="mul_2_AsStr" msprop:Generator_ColumnVarNameInTable="columnmul_2_AsStr" msprop:Generator_ColumnPropNameInRow="mul_2_AsStr" msprop:Generator_ColumnPropNameInTable="mul_2_AsStrColumn" msprop:Generator_UserColumnName="mul_2_AsStr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="updatedatetime" msprop:Generator_ColumnVarNameInTable="columnupdatedatetime" msprop:Generator_ColumnPropNameInRow="updatedatetime" msprop:Generator_ColumnPropNameInTable="updatedatetimeColumn" msprop:Generator_UserColumnName="updatedatetime" type="xs:anyType" msdata:DataType="System.DateTimeOffset" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TYPE_D_SAMPLE_DATA" msprop:Generator_TableClassName="TYPE_D_SAMPLE_DATADataTable" msprop:Generator_TableVarName="tableTYPE_D_SAMPLE_DATA" msprop:Generator_TablePropName="TYPE_D_SAMPLE_DATA" msprop:Generator_RowDeletingName="TYPE_D_SAMPLE_DATARowDeleting" msprop:Generator_RowChangingName="TYPE_D_SAMPLE_DATARowChanging" msprop:Generator_RowEvHandlerName="TYPE_D_SAMPLE_DATARowChangeEventHandler" msprop:Generator_RowDeletedName="TYPE_D_SAMPLE_DATARowDeleted" msprop:Generator_UserTableName="TYPE_D_SAMPLE_DATA" msprop:Generator_RowChangedName="TYPE_D_SAMPLE_DATARowChanged" msprop:Generator_RowEvArgName="TYPE_D_SAMPLE_DATARowChangeEvent" msprop:Generator_RowClassName="TYPE_D_SAMPLE_DATARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="uid" msprop:Generator_ColumnVarNameInTable="columnuid" msprop:Generator_ColumnPropNameInRow="uid" msprop:Generator_ColumnPropNameInTable="uidColumn" msprop:Generator_UserColumnName="uid" type="xs:long" minOccurs="0" />
+              <xs:element name="original_str" msprop:Generator_ColumnVarNameInTable="columnoriginal_str" msprop:Generator_ColumnPropNameInRow="original_str" msprop:Generator_ColumnPropNameInTable="original_strColumn" msprop:Generator_UserColumnName="original_str" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="castAsBigInt" msprop:Generator_ColumnVarNameInTable="columncastAsBigInt" msprop:Generator_ColumnPropNameInRow="castAsBigInt" msprop:Generator_ColumnPropNameInTable="castAsBigIntColumn" msprop:Generator_UserColumnName="castAsBigInt" type="xs:long" minOccurs="0" />
+              <xs:element name="mul_2" msprop:Generator_ColumnVarNameInTable="columnmul_2" msprop:Generator_ColumnPropNameInRow="mul_2" msprop:Generator_ColumnPropNameInTable="mul_2Column" msprop:Generator_UserColumnName="mul_2" type="xs:long" minOccurs="0" />
+              <xs:element name="mul_2_AsStr" msprop:Generator_ColumnVarNameInTable="columnmul_2_AsStr" msprop:Generator_ColumnPropNameInRow="mul_2_AsStr" msprop:Generator_ColumnPropNameInTable="mul_2_AsStrColumn" msprop:Generator_UserColumnName="mul_2_AsStr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="updatedatetime" msprop:Generator_ColumnVarNameInTable="columnupdatedatetime" msprop:Generator_ColumnPropNameInRow="updatedatetime" msprop:Generator_ColumnPropNameInTable="updatedatetimeColumn" msprop:Generator_UserColumnName="updatedatetime" type="xs:anyType" msdata:DataType="System.DateTimeOffset" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="PK__D_SAMPLE__DD70126476A34076" msdata:ConstraintName="PK__D_SAMPLE__DD70126476A34076" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:D_SAMPLE_DATA" />
+      <xs:field xpath="mstns:uid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+
+# ビルド成果物として別途配置する場合は各自運用に合わせて調整してください
+# Binary/

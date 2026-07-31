@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[D_SAMPLE_DATA]
+(
+	  [uid] BIGINT NOT NULL IDENTITY(1,1)
+	, [original_str] NVARCHAR(20) COLLATE Japanese_CI_AS NULL
+	, [castAsBigInt] BIGINT NULL
+	, [mul_2] BIGINT NULL
+	, [mul_2_AsStr] NVARCHAR(20) COLLATE Japanese_CI_AS NULL
+	, [updatedatetime] DATETIMEOFFSET(1) NOT NULL DEFAULT(sysdatetimeoffset())
+	, CONSTRAINT [PK__D_SAMPLE__DD70126476A34076] PRIMARY KEY ([uid] ASC)
+)
+
