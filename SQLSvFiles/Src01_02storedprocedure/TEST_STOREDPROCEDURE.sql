@@ -5,7 +5,7 @@ GO
 -- Create date: 20260730
 -- Description: テスト用のストアド
 -- =============================================
-CREATE PROCEDURE dbo.TEST_STOREDPROCEDURE 
+CREATE PROCEDURE [dbo].[TEST_STOREDPROCEDURE] 
     -- Add the parameters for the stored procedure here
     @p1 nvarchar(20) = '' 
     ,@outputtable_result dbo.TYPE_D_SAMPLE_DATA readonly
@@ -52,7 +52,7 @@ BEGIN
     end
     ;
 
-    insert into #outputtable_result
+    insert into dbo.D_SAMPLE_DATA
     (
         original_str
         ,castAsBigInt
@@ -60,10 +60,28 @@ BEGIN
         ,mul_2_AsStr
     )
     select 
-        original_str
+        A.original_str
+        ,A.castAsBigInt
+        ,A.mul_2
+        ,A.mul_2_AsStr
+    from @row A;
+
+    insert into #outputtable_result
+    (
+        uid
+        ,original_str
         ,castAsBigInt
         ,mul_2
         ,mul_2_AsStr
-    from @row;
+        ,updatedatetime
+    )
+    select 
+        A.uid
+        ,A.original_str
+        ,A.castAsBigInt
+        ,A.mul_2
+        ,A.mul_2_AsStr
+        ,A.updatedatetime
+    from dbo.D_SAMPLE_DATA A;
 
 END

@@ -1,0 +1,2 @@
+*.xml encoding=sjis
+*.xml.temp encoding=utf-8
